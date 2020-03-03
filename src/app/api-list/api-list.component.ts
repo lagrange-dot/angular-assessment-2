@@ -10,9 +10,10 @@ import { ApiResponse } from '../../core/models/api.model';
 export class ApiListComponent implements OnInit  {
  
   apis: ApiResponse[];
+  title: string;
 
   constructor(private apiService: ApiService){
-
+    
   }
 
   ngOnInit(){
@@ -21,6 +22,7 @@ export class ApiListComponent implements OnInit  {
         this.apis = data; 
        }
     );
+    this.title = "API of APIs";
   }
 
   

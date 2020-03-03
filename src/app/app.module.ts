@@ -6,12 +6,11 @@ import { AppComponent } from './app.component';
 import {ApiService} from '../core/services/api.service';
 import {ApiListComponent} from './api-list/api-list.component';
 import {TableModule} from 'primeng/table';
-import { ReactiveFormsModule } from '@angular/forms';
-
+import {FilterPipe} from '../core/pipes/filter.pipe';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, HttpClientModule, TableModule, ReactiveFormsModule],
-  declarations: [ AppComponent, ApiListComponent ],
+  imports:      [ BrowserModule, FormsModule, HttpClientModule, TableModule],
+  declarations: [ AppComponent, ApiListComponent, FilterPipe],
   bootstrap:    [ AppComponent ],
   providers: [ApiService]
 })
