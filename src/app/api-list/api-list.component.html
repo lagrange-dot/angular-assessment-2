@@ -1,0 +1,21 @@
+<p-table #tt [value]="apis" [paginator]="true" [rows]="10" [globalFilterFields]="['API','Description']">
+  <ng-template pTemplate="caption">
+        <i class="pi pi-search" ></i> 
+        <input type="text" pInputText size="50" placeholder="Global Filter" (input)="tt.filterGlobal($event.target.value, 'contains')" style="width:auto">
+    </ng-template>
+  <ng-template pTemplate="header">
+    <tr>
+      <th [pSortableColumn]="'API'">Name <p-sortIcon [field]="'Name'"></p-sortIcon></th>
+      <th [pSortableColumn]="'Description'">Description <p-sortIcon [field]="'Description'"></p-sortIcon></th>
+      <th [pSortableColumn]="'Category'">Category</th>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-api>
+    <tr>
+      <td>{{api.API}}</td>
+      <td>{{api.Description}}</td>
+      <td>{{api.Category}}</td>
+    </tr>
+  </ng-template>
+</p-table>
